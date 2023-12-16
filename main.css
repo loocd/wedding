@@ -1,0 +1,150 @@
+/* 
+////////////////////////////////////////////
+Color Theme
+////////////////////////////////////////////
+*/
+
+body {
+	--color-off-white: 255, 250, 250;
+	--color-wheat: 217, 183, 132;
+	--color-eucalyptus: 46, 78, 67;
+	--color-eucalyptus-light: 223, 232, 229;
+}
+
+/* 
+////////////////////////////////////////////
+Typography
+////////////////////////////////////////////
+*/
+@font-face {
+	font-family: NewYork;
+	src: url(/public/NewYork.otf);
+}
+
+body {
+	font-family: Roboto, sans-serif;
+	font-weight: 300;
+	color: rgb(0, 0, 0);
+}
+header {
+	font-family: NewYork, serif;
+	color: rgb(var(--color-off-white));
+}
+
+h1 {
+	font-size: 64px;
+	font-weight: normal;
+}
+
+h2 {
+	font-family: NewYork, serif;
+	font-size: 3rem;
+	font-weight: normal;
+}
+
+/* 
+////////////////////////////////////////////
+Component variables
+////////////////////////////////////////////
+*/
+
+/* 
+////////////////////////////////////////////
+Styling
+////////////////////////////////////////////
+*/
+* {
+	box-sizing: border-box;
+}
+body {
+	background-color: rgb(var(--color-off-white));
+}
+section {
+	padding: 10px;
+	position: relative;
+}
+header {
+	height: 100svh;
+	overflow: hidden;
+}
+header img {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	object-fit: cover;
+	object-position: 45% 50%;
+}
+.hero__gradient {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: linear-gradient(
+		180deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(0, 0, 0, 0.5) 75%
+	);
+}
+.hero__cover-text {
+	position: absolute;
+	bottom: 10%;
+	left: 20px;
+}
+
+.hero #date {
+	font-size: 20px;
+	position: relative;
+}
+.hero #date:after {
+	content: "";
+	width: 20%;
+	height: 1px;
+	background-color: rgb(var(--color-off-white));
+	position: absolute;
+	bottom: -0.5rem;
+	left: 0;
+}
+
+.hero h1 {
+	margin: 20px 0;
+}
+
+section.countdown {
+	background-color: rgb(var(--color-wheat));
+	height: 100vh;
+}
+
+.countdown__content {
+	position: absolute;
+	margin: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	text-align: center;
+	width: 33ch;
+	height: auto;
+}
+
+#countdown__counter {
+	display: flex;
+	justify-content: space-between;
+
+	margin: 50px 0;
+}
+
+.countdown__zahlen {
+	font-size: 2rem;
+	font-weight: bold;
+}
+
+.countdown__label {
+	font-weight: normal;
+	opacity: 0.7;
+}

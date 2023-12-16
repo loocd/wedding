@@ -6,8 +6,81 @@
 		<title>Annebelle & Pascal</title>
 		<link rel="stylesheet" href="normalize.css" />
 		<link rel="stylesheet" href="main.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<script>
+			//countdown
+			// Set the date we're counting down to
+			var countDownDate = new Date("May 17, 2025 14:30:00").getTime();
+
+			// Update the count down every 1 second
+			var x = setInterval(function () {
+				// Get today's date and time
+				var now = new Date().getTime();
+
+				// Find the distance between now and the count down date
+				var distance = Math.max(0, countDownDate - now);
+
+				// Time calculations for days, hours, minutes and seconds
+				var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+				var hours = Math.floor(
+					(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+				);
+				var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+				var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+				document.getElementById("countdown__days").innerHTML = days;
+				document.getElementById("countdown__hours").innerHTML = hours;
+				document.getElementById("countdown__minutes").innerHTML = minutes;
+				document.getElementById("countdown__seconds").innerHTML = seconds;
+			}, 1000);
+		</script>
 	</head>
 	<body>
-		Test
+		<main>
+			<header class="hero">
+				<img
+					src="/public/Annebelle_und_Pascal_Juli_2022_JCMP-5.jpg"
+					alt="Hero Image"
+				/>
+				<!-- Bild ersetzen durch optimierte Grössen (reduzierte Grösse und komprimiert) um Ladezeiten zu beschleunigen -->
+				<div class="hero__gradient"></div>
+				<div class="hero__cover-text">
+					<div id="date">17.05.2025</div>
+					<h1>Annebelle<br />& Pascal</h1>
+				</div>
+			</header>
+			<section class="countdown">
+				<div class="countdown__content">
+					<h2>Feier mit uns</h2>
+					<p>
+						Nach 12 Jahren ist es endlich so weit - am 17. Mai 2025 wird
+						geheiratet! Es freut uns riesig, wenn du mit uns feierst.
+					</p>
+					<div id="countdown__counter">
+						<div>
+							<div class="countdown__zahlen" id="countdown__days">--</div>
+							<div class="countdown__label">Tage</div>
+						</div>
+						<div>
+							<div class="countdown__zahlen" id="countdown__hours">--</div>
+							<div class="countdown__label">Stunden</div>
+						</div>
+						<div>
+							<div class="countdown__zahlen" id="countdown__minutes">--</div>
+							<div class="countdown__label">Minuten</div>
+						</div>
+						<div>
+							<div class="countdown__zahlen" id="countdown__seconds">--</div>
+							<div class="countdown__label">Sekunden</div>
+						</div>
+					</div>
+					<div id="countdown__counter-test"></div>
+				</div>
+			</section>
+		</main>
 	</body>
 </html>
