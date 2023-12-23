@@ -9,8 +9,12 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap"
 			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
 		/>
 		<script>
 			//countdown
@@ -43,7 +47,14 @@
 		<main>
 			<header class="hero">
 				<img
-					src="/public/Annebelle_und_Pascal_Juli_2022_JCMP-5.jpg"
+					src="/public/header_3000w.jpg"
+					srcset="
+						/public/header_1500w.jpg 1500w,
+						/public/header_2000w.jpg 2000w,
+						/public/header_2500w.jpg 2500w,
+						/public/header_3000w.jpg 3000w
+					"
+					sizes="100vw"
 					alt="Hero Image"
 				/>
 				<!-- .
@@ -61,18 +72,30 @@
 .
                 . -->
 				<div class="hero__gradient"></div>
-				<div class="hero__cover-text">
-					<div id="date">17.05.2025</div>
-					<h1>Annebelle<br />& Pascal</h1>
+				<div class="content-max-width">
+					<div class="hero__flex-outer">
+						<div class="hero__cover-text">
+							<div id="date">17.05.2025</div>
+							<h1>Annebelle<br />& Pascal</h1>
+						</div>
+						<a
+							class="material-symbols-outlined"
+							id="hero__arrow-down"
+							href="#section-countdown"
+						>
+							expand_circle_down
+						</a>
+					</div>
 				</div>
 			</header>
-			<section class="countdown">
+			<section class="countdown" id="section-countdown">
 				<div class="countdown__content">
 					<h2>Feier mit uns</h2>
 					<p>
 						Nach 12 Jahren ist es endlich so weit - am 17. Mai 2025 wird
 						geheiratet! Es freut uns riesig, wenn du mit uns feierst.
 					</p>
+					<p class="material-symbols-outlined">favorite</p>
 					<div id="countdown__counter">
 						<div>
 							<div class="countdown__zahlen" id="countdown__days">--</div>
@@ -91,8 +114,39 @@
 							<div class="countdown__label">Sekunden</div>
 						</div>
 					</div>
+					<p class="countdown__please p--small">
+						Bitte melde dich mit untenstehendem Formular bis zum 28. Februar
+						2025 an.
+					</p>
 					<div id="countdown__counter-test"></div>
 				</div>
+			</section>
+			<section class="ablauf">
+				<div class="ablauf__img-container">
+					<img
+						src="/public/header_1000w.jpg"
+						alt="Hero Image"
+						class="fade-in"
+					/>
+				</div>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam maxime
+					eveniet aliquid ipsum repudiandae quidem. Fugiat cum sunt fugit
+					corporis aut! Rerum aut illo ipsum fugiat. Explicabo minima minus
+					sint!
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam maxime
+					eveniet aliquid ipsum repudiandae quidem. Fugiat cum sunt fugit
+					corporis aut! Rerum aut illo ipsum fugiat. Explicabo minima minus
+					sint!
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam maxime
+					eveniet aliquid ipsum repudiandae quidem. Fugiat cum sunt fugit
+					corporis aut! Rerum aut illo ipsum fugiat. Explicabo minima minus
+					sint!
+				</p>
 			</section>
 		</main>
 	</body>
