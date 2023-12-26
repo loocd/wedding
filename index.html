@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Annebelle & Pascal</title>
-		<link rel="stylesheet" href="normalize.css" />
-		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="./normalize.css" />
+		<link rel="stylesheet" href="./main.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -17,7 +17,7 @@
 			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0"
 		/>
 		<script>
-			//countdown
+			// countdown
 			// Set the date we're counting down to
 			var countDownDate = new Date("May 17, 2025 14:30:00").getTime();
 
@@ -42,6 +42,44 @@
 				document.getElementById("countdown__seconds").innerHTML = seconds;
 			}, 1000);
 		</script>
+		<script>
+			((g) => {
+				var h,
+					a,
+					k,
+					p = "The Google Maps JavaScript API",
+					c = "google",
+					l = "importLibrary",
+					q = "__ib__",
+					m = document,
+					b = window;
+				b = b[c] || (b[c] = {});
+				var d = b.maps || (b.maps = {}),
+					r = new Set(),
+					e = new URLSearchParams(),
+					u = () =>
+						h ||
+						(h = new Promise(async (f, n) => {
+							await (a = m.createElement("script"));
+							e.set("libraries", [...r] + "");
+							for (k in g)
+								e.set(
+									k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
+									g[k]
+								);
+							e.set("callback", c + ".maps." + q);
+							a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+							d[q] = f;
+							a.onerror = () => (h = n(Error(p + " could not load.")));
+							a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+							m.head.append(a);
+						}));
+				d[l]
+					? console.warn(p + " only loads once. Ignoring:", g)
+					: (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+			})({ key: "AIzaSyC5kUneEr6MKKUqQVxn8UECei9a4OGPWzc", v: "beta" });
+		</script>
+		<script src="./map.js"></script>
 	</head>
 	<body>
 		<main>
@@ -59,21 +97,8 @@
 						100vw
 					"
 					alt="Hero Image"
+					class="hero__img"
 				/>
-				<!-- .
-                .
-                .
-                .
-                .
-                .
-                .
-                Bild ersetzen durch optimierte Grössen (reduzierte Grösse und komprimiert) um Ladezeiten zu beschleunigen
-                https://css-tricks.com/a-guide-to-the-responsive-images-syntax-in-html/
-.
-.
-.
-.
-                . -->
 				<div class="hero__gradient"></div>
 				<div class="content-max-width">
 					<div class="hero__flex-outer">
@@ -124,32 +149,180 @@
 					<div id="countdown__counter-test"></div>
 				</div>
 			</section>
-			<section class="ablauf">
+			<section id="ablauf">
 				<div class="ablauf__img-container">
+					<!-- !sizes noch validieren auf Basis echter Breakpoints -->
+					<!-- !sizes noch validieren auf Basis echter Breakpoints -->
+					<!-- !sizes noch validieren auf Basis echter Breakpoints -->
 					<img
-						src="/public/header_1000w.jpg"
-						alt="Hero Image"
+						src="/public/dock_2700w.jpg"
+						srcset="
+							/public/dock_500w.jpg   500w,
+							/public/dock_1000w.jpg 1000w,
+							/public/dock_1500w.jpg 1500w,
+							/public/dock_2000w.jpg 2000w,
+							/public/dock_2500w.jpg 2500w,
+							/public/dock_2700w.jpg 3000w
+						"
+						sizes="
+							(max-width: 500px) 100vw,
+							100vw
+						"
+						alt="decorative image"
 						class="fade-in"
 					/>
 				</div>
+				<h3>Ablauf</h3>
+				<div class="timeline__container">
+					<div class="timeline__flex-elements-container">
+						<div class="material-symbols-outlined timeline__icon-container">
+							directions_car
+						</div>
+						<div class="timeline__text-container">
+							<p class="timeline__time p--small">14:30</p>
+							<h5 class="timeline__title">Eintreffen</h5>
+							<p class="timeline__description p--small">
+								Wir freuen uns darauf, euch zu unserem Fest begrüssen zu dürfen!
+							</p>
+						</div>
+					</div>
+					<div class="timeline__flex-elements-container">
+						<div class="material-symbols-outlined timeline__icon-container">
+							favorite
+						</div>
+						<div class="timeline__text-container">
+							<p class="timeline__time p--small">15:00</p>
+							<h5 class="timeline__title">Freie Trauung</h5>
+							<p class="timeline__description p--small">
+								Wenn es das Wetter erlaubt, findet die Zeremonie im Freien
+								statt.
+							</p>
+						</div>
+					</div>
+					<div class="timeline__flex-elements-container">
+						<div class="material-symbols-outlined timeline__icon-container">
+							nightlife
+						</div>
+						<div class="timeline__text-container">
+							<p class="timeline__time p--small">15:30</p>
+							<h5 class="timeline__title">Apéro und Unterhaltung</h5>
+							<p class="timeline__description p--small">
+								Stosst mit uns an und geniesst die tolle Location direkt am
+								Rhein!
+							</p>
+						</div>
+					</div>
+					<div class="timeline__flex-elements-container">
+						<div class="material-symbols-outlined timeline__icon-container">
+							restaurant
+						</div>
+						<div class="timeline__text-container">
+							<p class="timeline__time p--small">18:00</p>
+							<h5 class="timeline__title">Abendessen</h5>
+							<p class="timeline__description p--small">
+								Wir lassen uns in der Rhyschüür verköstigen bis die Ranzen
+								platzen.
+							</p>
+						</div>
+					</div>
+					<div class="timeline__flex-elements-container">
+						<div class="material-symbols-outlined timeline__icon-container">
+							celebration
+						</div>
+						<div class="timeline__text-container">
+							<p class="timeline__time p--small">anschliessend</p>
+							<h5 class="timeline__title">Party</h5>
+							<p class="timeline__description p--small">
+								Die Rhyschüür gehört uns die ganze Nacht - go wild!
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="location">
+				<h3>Location</h3>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam maxime
-					eveniet aliquid ipsum repudiandae quidem. Fugiat cum sunt fugit
-					corporis aut! Rerum aut illo ipsum fugiat. Explicabo minima minus
-					sint!
+					Wir feiern unsere Hochzeit in der Rhyschüür in Diessenhofen. Die
+					200-jährige Scheune liegt am Rheinufer und bietet ein einmaliges
+					Ambiente.
 				</p>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam maxime
-					eveniet aliquid ipsum repudiandae quidem. Fugiat cum sunt fugit
-					corporis aut! Rerum aut illo ipsum fugiat. Explicabo minima minus
-					sint!
+					Frisch umgebaut ist sie die perfekte Location für die grosse Feier!
 				</p>
+				<div class="location__img-container">
+					<!-- !sizes noch validieren auf Basis echter Breakpoints -->
+					<!-- !sizes noch validieren auf Basis echter Breakpoints -->
+					<!-- !sizes noch validieren auf Basis echter Breakpoints -->
+					<img
+						src="./public/schupfen1_1920w.jpg"
+						srcset="
+							./public/schupfen1_500w.jpg   500w,
+							./public/schupfen1_1000w.jpg 1000w,
+							./public/schupfen1_1500w.jpg 1500w,
+							./public/schupfen1_1920w.jpg 1920w
+						"
+						sizes="
+						(max-width: 500px) 100vw
+					"
+						alt="Rhyschüür Schupfen Bild 1"
+						class="fade-in"
+					/>
+					<img
+						src="./public/schupfen2_1050w.jpg"
+						srcset="
+							./public/schupfen2_500w.jpg   500w,
+							./public/schupfen2_1050w.jpg 1050w
+						"
+						sizes="
+						(max-width: 500px) 100vw
+					"
+						alt="Rhyschüür Schupfen Bild 2"
+						class="fade-in"
+					/>
+					<img
+						src="./public/schupfen3_2560w.jpg"
+						srcset="
+							./public/schupfen3_500w.jpg   500w,
+							./public/schupfen3_1000w.jpg 1000w,
+							./public/schupfen3_1500w.jpg 1500w,
+							./public/schupfen3_2000w.jpg 2000w,
+							./public/schupfen3_2560w.jpg 2560w
+						"
+						sizes="
+						(max-width: 500px) 100vw
+					"
+						alt="Rhyschüür Schupfen Bild 3"
+						class="fade-in"
+					/>
+				</div>
+				<h4>Anfahrt</h4>
 				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam maxime
-					eveniet aliquid ipsum repudiandae quidem. Fugiat cum sunt fugit
-					corporis aut! Rerum aut illo ipsum fugiat. Explicabo minima minus
-					sint!
+					Rhyschüür<br />
+					Gasthaus Schupfen<br />
+					Steinerstrasse 501<br />
+					8253 Diessenhofen
 				</p>
+				<p>Es stehen Parkplätze zur Verfügung.</p>
+				<div id="map"></div>
+				<!-- <script
+					async
+					src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5kUneEr6MKKUqQVxn8UECei9a4OGPWzc&mapId=f1e9ad829ffd66a5&callback=initMap"
+				></script> -->
+				<!-- <iframe
+					src="https://snazzymaps.com/embed/536985"
+					width="100%"
+					height="418px"
+					style="border: none"
+				></iframe> -->
+			</section>
+			<section id="signup">
+				<h3>Anmeldung</h3>
+			</section>
+			<section id="faq">
+				<h3>Häufige Fragen</h3>
+			</section>
+			<section id="contact">
+				<h3>Kontakt</h3>
 			</section>
 		</main>
 	</body>
