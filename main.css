@@ -26,13 +26,23 @@ Typography
 body {
 	--font-family: "Open Sans", sans-serif;
 	--font-family-special: NewYork, serif;
+
+	--font-size-h1: 64px;
+	--font-size-h2: 3rem;
+	--font-size-h3: 2rem;
+	--font-size-h4: 1.5rem;
+	--font-size-h5: 1.3rem;
+	--font-size-p: 1rem;
+
+	--line-height: 1.2;
 }
 
-body {
+body,
+input {
 	font-family: var(--font-family);
 	font-weight: normal;
 	color: rgb(0, 0, 0);
-	line-height: 1.2;
+	line-height: var(--line-height);
 }
 header {
 	font-family: var(--font-family-special);
@@ -40,16 +50,16 @@ header {
 }
 h1 {
 	font-family: var(--font-family-special);
-	font-size: 64px;
+	font-size: var(--font-size-h1);
 	font-weight: normal;
 }
 h2 {
 	font-family: var(--font-family-special);
-	font-size: 3rem;
+	font-size: var(--font-size-h2);
 	font-weight: normal;
 }
 h3 {
-	font-size: 2rem;
+	font-size: var(--font-size-h3);
 	font-weight: normal;
 
 	margin-top: 50px;
@@ -59,19 +69,19 @@ section:not(.section--no-card) h3:first-of-type {
 	margin-top: 0;
 }
 h4 {
-	font-size: 1.5rem;
+	font-size: var(--font-size-h4);
 	font-weight: normal;
 }
 h5 {
-	font-size: 1.3rem;
+	font-size: var(--font-size-h5);
 	font-weight: normal;
 }
 
 p {
-	font-size: 1rem;
+	font-size: var(--font-size-p);
 }
 p.p--small {
-	font-size: 0.9rem;
+	font-size: 90%;
 }
 
 p.p--green {
@@ -200,6 +210,110 @@ img.fade-in {
 		scale: 1;
 		opacity: 1;
 	}
+}
+form .form__input-cluster {
+	/* space between inputs */
+	margin: 16px 0;
+}
+
+.form input[type="submit"] {
+	all: unset;
+}
+.form input,
+.form input[type="submit"],
+.form textarea {
+	width: 100%;
+	padding: 8px 16px;
+}
+.form input:not([type="submit"]),
+.form textarea {
+	/* box-shadow to avoid jumps when resizing border from 1px to 3px */
+	border: 0 !important;
+	box-shadow: 0px 1px 0px 0px rgb(var(--color-off-white));
+	transition: box-shadow 200ms;
+	-webkit-transition: box-shadow 200ms;
+	-moz-transition: box-shadow 200ms;
+	-ms-transition: box-shadow 200ms;
+	-o-transition: box-shadow 200ms;
+
+	-webkit-appearance: none; /* needed to make it work on iOS*/
+
+	padding-top: 1.6rem;
+	margin-bottom: 0;
+	border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+	-webkit-border-radius: var(--border-radius-small) var(--border-radius-small) 0
+		0;
+	-moz-border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+	-ms-border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+	-o-border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+
+	color: rgb(var(--color-off-white));
+	background-color: rgba(var(--color-off-white), 0.2);
+}
+.form input:focus,
+.form textarea:focus {
+	/* border-bottom: 3px solid rgb(var(--color-wheat)); */
+	box-shadow: 0px 3px 0px 0px rgb(var(--color-wheat));
+}
+
+.form textarea {
+	resize: vertical;
+	min-height: 20ch;
+}
+
+.form label {
+	/* set floating label to top left of input field */
+	top: 8px;
+	left: 16px;
+
+	font-size: 0.75rem;
+	font-weight: lighter;
+	color: rgb(var(--color-eucalyptus-light));
+}
+.form input:focus + *,
+.form textarea:focus + * {
+	/* special case floating label for current input */
+	color: rgb(var(--color-wheat));
+}
+.form input:placeholder-shown:not(:focus) + label,
+.form textarea:placeholder-shown:not(:focus) + label {
+	/* large label for input fields that are neither selected nor filled */
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+
+	font-size: var(--font-size-p);
+	color: rgb(var(--color-off-white));
+	opacity: 1;
+}
+.form textarea:placeholder-shown:not(:focus) + label {
+	/* special case label for comment field - should not be centered vertically */
+	top: 1.6rem;
+}
+
+.form ::placeholder {
+	color: rgba(var(--color-off-white), 0.6);
+}
+
+.form input[type="submit"] {
+	box-sizing: border-box;
+	text-align: center;
+
+	border-radius: var(--border-radius-small);
+	-webkit-border-radius: var(--border-radius-small);
+	-moz-border-radius: var(--border-radius-small);
+	-ms-border-radius: var(--border-radius-small);
+	-o-border-radius: var(--border-radius-small);
+	background-color: rgb(var(--color-wheat));
+
+	min-height: 45px;
+
+	color: rgb(var(--color-eucalyptus));
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 /* Chronological */
@@ -480,13 +594,64 @@ section#gallery {
 }
 
 .pswp--custom-icon-colors {
-	--pswp-icon-color: rgb(var(--color-off-white));
-	--pswp-icon-color-secondary: #333;
+	--pswp-icon-color: rgb(var(--color-off-white)) !important;
 }
 
 section#signup {
 	--bg-color: var(--color-eucalyptus);
 	color: rgb(var(--color-off-white));
+}
+form .form__part {
+	margin: 30px 0;
+}
+form .form__additional-guests-hint {
+	margin: 0;
+	font-weight: lighter;
+	font-style: italic;
+}
+form .form__guests {
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	column-gap: 5px;
+}
+
+.form__guests .guests__name input {
+	border-top-right-radius: 0;
+}
+.form__guests .guests__age input {
+	border-top-left-radius: 0;
+}
+.submission-successful {
+	display: none;
+}
+.submission-successful,
+.submission-successful a {
+	margin-top: 30px;
+
+	color: rgb(var(--color-wheat));
+	text-align: center;
+}
+
+.submission-successful > p {
+	font-style: italic;
+	margin-bottom: 30px;
+}
+#save-to-calendar > * {
+	margin: 0px;
+}
+#save-to-calendar .material-symbols-outlined {
+	font-size: 50px;
+	padding-bottom: 10px;
+}
+#save-to-calendar p {
+	text-transform: uppercase;
+}
+
+.guest.guest__age {
+	width: 50px;
+}
+.add-guest {
+	margin: 0;
 }
 
 section#faq {
