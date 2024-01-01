@@ -51,38 +51,10 @@ function getFullscreenPromise() {
 		fullscreenAPI.request(pswpContainer);
 	});
 }
-
-const lightbox = new PhotoSwipeLightbox({
-	gallery: "#gallery--native-fs",
-	children: "a",
-	pswpModule: () => import("./public/photoswipe/dist/photoswipe.esm.js"),
-
-	// Add function that returns promise
-	openPromise: getFullscreenPromise,
-
-	// Append PhotoSwipe to our container
-	appendToEl: fullscreenAPI ? pswpContainer : document.body,
-
-	// disable opening/closing animations
-	showAnimationDuration: 0,
-	hideAnimationDuration: 0,
-
-	// Add if you're using responsive images
-	// since viewport size is unpredictable
-	// at initialization
-	preloadFirstSlide: false,
-});
-lightbox.on("close", () => {
-	pswpContainer.style.display = "none";
-	if (fullscreenAPI && fullscreenAPI.isFullscreen()) {
-		fullscreenAPI.exit();
-	}
-});
-lightbox.init();
-
 // Gallerie Schupfen
 
 const lightboxSchupfen = new PhotoSwipeLightbox({
+	mainClass: "pswp--custom-icon-colors",
 	gallery: "#pswp-gallery--schupfen",
 	children: "a",
 	pswpModule: () => import("./public/photoswipe/dist/photoswipe.esm.js"),
@@ -113,6 +85,7 @@ lightboxSchupfen.init();
 // Gallerie Shooting
 
 const lightboxShooting = new PhotoSwipeLightbox({
+	mainClass: "pswp--custom-icon-colors",
 	gallery: "#pswp-gallery--shooting",
 	children: "a",
 	pswpModule: () => import("./public/photoswipe/dist/photoswipe.esm.js"),
