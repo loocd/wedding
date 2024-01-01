@@ -37,7 +37,7 @@ async function initMap() {
 	map = new Map(document.getElementById("map"), {
 		mapId: "f1e9ad829ffd66a5",
 		center: position,
-		zoom: 13,
+		zoom: 12,
 		mapTypeControl: false,
 		fullscreenControl: false,
 		streetViewControl: false,
