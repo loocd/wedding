@@ -5,8 +5,8 @@
 	"main": "index.html",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build:css": "postcss ./*.css --dir ./build",
-		"watch:css": "postcss ./*.css --dir ./build -w"
+		"build:css": "postcss ./dev/*.css --dir ./",
+		"watch:css": "postcss ./dev/*.css --dir ./ -w"
 	},
 	"repository": {
 		"type": "git",
