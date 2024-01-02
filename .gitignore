@@ -1,6 +1,6 @@
 .history
-./resources/
-./node_modules/
-main.css
-normalize.css
-postcss.config.js
+resources/
+node_modules/
+/main.css
+/normalize.css
+/postcss.config.js
