@@ -12,8 +12,8 @@
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software. -->
 
-import PhotoSwipeLightbox from "./public/photoswipe/dist/photoswipe-lightbox.esm.js";
-// import PhotoSwipe from "./public/photoswipe/dist/photoswipe.esm.js";
+import PhotoSwipeLightbox from "./assets/photoswipe/dist/photoswipe-lightbox.esm.js";
+// import PhotoSwipe from "./assets/photoswipe/dist/photoswipe.esm.js";
 // Simple fullscreen API
 const fullscreenAPI = getFullscreenAPI();
 
@@ -57,7 +57,7 @@ const lightboxSchupfen = new PhotoSwipeLightbox({
 	mainClass: "pswp--custom-icon-colors",
 	gallery: "#pswp-gallery--schupfen",
 	children: "a",
-	pswpModule: () => import("./public/photoswipe/dist/photoswipe.esm.js"),
+	pswpModule: () => import("./assets/photoswipe/dist/photoswipe.esm.js"),
 
 	// Add function that returns promise
 	openPromise: getFullscreenPromise,
@@ -88,7 +88,7 @@ const lightboxShooting = new PhotoSwipeLightbox({
 	mainClass: "pswp--custom-icon-colors",
 	gallery: "#pswp-gallery--shooting",
 	children: "a",
-	pswpModule: () => import("./public/photoswipe/dist/photoswipe.esm.js"),
+	pswpModule: () => import("./assets/photoswipe/dist/photoswipe.esm.js"),
 
 	// Add function that returns promise
 	openPromise: getFullscreenPromise,
