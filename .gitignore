@@ -1,6 +1,5 @@
 .history
 node_modules/
 resources/
-/dev.main.css
-/dev.normalize.css
+dev/
 /postcss.config.js
