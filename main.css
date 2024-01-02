@@ -21,7 +21,7 @@ Typography
 */
 @font-face {
 	font-family: NewYork;
-	src: url(/public/NewYork.otf);
+	src: url(./public/NewYork.otf);
 }
 
 body {
@@ -34,6 +34,8 @@ body {
 	--font-size-h4: 1.5rem;
 	--font-size-h5: 1.3rem;
 	--font-size-p: 1rem;
+
+	--margin-p: 1rem;
 
 	--line-height: 1.2;
 }
@@ -63,11 +65,11 @@ h3 {
 	font-size: var(--font-size-h3);
 	font-weight: normal;
 
-	margin-top: 50px;
+	margin-top: 0;
 	margin-bottom: 20px;
 }
-section:not(.section--no-card) h3:first-of-type {
-	margin-top: 0;
+h3.h3--margin-top {
+	margin-top: 50px;
 }
 h4 {
 	font-size: var(--font-size-h4);
@@ -78,8 +80,16 @@ h5 {
 	font-weight: normal;
 }
 
+h6 {
+	font-size: var(--font-size-p);
+	font-weight: bold;
+
+	margin: 0;
+}
+
 p {
 	font-size: var(--font-size-p);
+	margin: var(--margin-p) 0;
 }
 p.p--small {
 	font-size: 90%;
@@ -692,7 +702,92 @@ form .form__guests {
 	margin: 0;
 }
 
-section#faq {
+section#faq .faq-collection {
+	margin-top: 30px;
+}
+
+.faq__container {
+	position: relative;
+	background-color: rgb(var(--color-eucalyptus-light));
+	border-radius: var(--border-radius-small);
+	-webkit-border-radius: var(--border-radius-small);
+	-moz-border-radius: var(--border-radius-small);
+	-ms-border-radius: var(--border-radius-small);
+	-o-border-radius: var(--border-radius-small);
+	margin: 12px 0;
+}
+.faq__container__header {
+	display: grid;
+	grid-template-columns: 1fr 2.2rem;
+	justify-items: start;
+	align-items: center;
+	width: 100%;
+	padding: 20px 16px;
+
+	cursor: pointer;
+
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+
+	/* flex-direction: row; */
+}
+.faq__container .icon-faq {
+	justify-self: center;
+
+	padding-top: 0.2rem;
+	color: rgb(var(--color-eucalyptus));
+	font-size: 2.2rem;
+	font-weight: bold;
+	line-height: 0px;
+	transition: transform 300ms, padding 300ms;
+	-webkit-transition: transform 300ms, padding 300ms;
+	-moz-transition: transform 300ms, padding 300ms;
+	-ms-transition: transform 300ms, padding 300ms;
+	-o-transition: transform 300ms, padding 300ms;
+}
+.faq__container .faq__content-container {
+	display: grid;
+	grid-template-rows: 0fr;
+	margin: 0 16px;
+
+	transition: 300ms;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	-ms-transition: 300ms;
+	-o-transition: 300ms;
+}
+.faq__container.opened .faq__content-container {
+	grid-template-rows: 1fr;
+}
+.faq__container .faq__content {
+	overflow: hidden;
+}
+.faq__container .faq__content p {
+	margin: 0;
+}
+.faq__container .faq__content p:not(:first-child) {
+	margin-top: var(--margin-p);
+}
+.faq__container .faq__content p:last-child {
+	margin-bottom: var(--margin-p);
+}
+.faq__container.opened .icon-faq {
+	/* translateZ, backface-visibility and perspective used only to avoid jump in transition */
+	/* https://stackoverflow.com/questions/54718832/pixel-jump-on-css-rotate-animation */
+	transform: rotate(180deg) translateZ(0);
+	-webkit-transform: rotate(180deg) translateZ(0);
+	-moz-transform: rotate(180deg) translateZ(0);
+	-ms-transform: rotate(180deg) translateZ(0);
+	-o-transform: rotate(180deg) translateZ(0);
+	padding-top: 0;
+	padding-bottom: 0.2rem;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	perspective: 1000;
+}
+.faq__container.opened .faq__content {
+	display: block;
 }
 
 section#contact {

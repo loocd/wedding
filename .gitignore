@@ -1,0 +1,12 @@
+# .history
+# .gitignore
+# /resources
+
+
+*
+!*/
+
+!/build
+!.gitignore
+!package-lock.json
+!package.json
