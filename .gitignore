@@ -1,12 +1,6 @@
-# .history
-# .gitignore
-# /resources
-
-
-*
-!*/
-
-!build/**
-!.gitignore
-!package-lock.json
-!package.json
+.history
+./resources/
+./node_modules/
+main.css
+normalize.css
+postcss.config.js
