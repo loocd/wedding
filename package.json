@@ -4,7 +4,9 @@
 	"description": "wedding page",
 	"main": "index.html",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build:css": "postcss ./*.css --dir ./build",
+		"watch:css": "postcss ./*.css --dir ./build -w"
 	},
 	"repository": {
 		"type": "git",
@@ -15,5 +17,12 @@
 	"bugs": {
 		"url": "https://github.com/loocd/wedding/issues"
 	},
-	"homepage": "https://github.com/loocd/wedding#readme"
+	"homepage": "https://github.com/loocd/wedding#readme",
+	"devDependencies": {
+		"cssnano": "^6.0.2",
+		"i": "^0.3.7",
+		"postcss": "^8.4.32",
+		"postcss-cli": "^11.0.0",
+		"postcss-preset-env": "^9.3.0"
+	}
 }
