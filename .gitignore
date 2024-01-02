@@ -6,7 +6,7 @@
 *
 !*/
 
-!/build
+!build/**
 !.gitignore
 !package-lock.json
 !package.json
