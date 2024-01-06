@@ -90,46 +90,46 @@
 		<script type="module" src="./photoswipe.js"></script>
 	</head>
 	<body>
-		<main>
-			<header class="hero">
-				<img
-					src="./assets/img/ap7_3000w.webp"
-					sizes="
+		<header class="hero">
+			<img
+				src="./assets/img/ap7_3000w.webp"
+				sizes="
 						(orientation: portrait) 300vw,
 						(orientation: landscape) 100vw,
 						300vw
 					"
-					srcset="
-						./assets/img/ap7_300w.webp   300w,
-						./assets/img/ap7_500w.webp   500w,
-						./assets/img/ap7_800w.webp   800w,
-						./assets/img/ap7_1100w.webp 1100w,
-						./assets/img/ap7_1400w.webp 1400w,
-						./assets/img/ap7_1800w.webp 1800w,
-						./assets/img/ap7_2200w.webp 2200w,
-						./assets/img/ap7_2500w.webp 2500w,
-						./assets/img/ap7_3000w.webp 3000w
-					"
-					alt="Hero Image"
-					class="hero__img"
-				/>
-				<div class="hero__gradient"></div>
-				<div class="content-max-width">
-					<div class="hero__flex-outer">
-						<div class="hero__cover-text">
-							<div id="date">17.05.2025</div>
-							<h1>Annebelle<br />& Pascal</h1>
-						</div>
-						<a
-							class="material-symbols-outlined"
-							id="hero__arrow-down"
-							href="#section-countdown"
-						>
-							expand_circle_down
-						</a>
+				srcset="
+					./assets/img/ap7_300w.webp   300w,
+					./assets/img/ap7_500w.webp   500w,
+					./assets/img/ap7_800w.webp   800w,
+					./assets/img/ap7_1100w.webp 1100w,
+					./assets/img/ap7_1400w.webp 1400w,
+					./assets/img/ap7_1800w.webp 1800w,
+					./assets/img/ap7_2200w.webp 2200w,
+					./assets/img/ap7_2500w.webp 2500w,
+					./assets/img/ap7_3000w.webp 3000w
+				"
+				alt="Hero Image"
+				class="hero__img"
+			/>
+			<div class="hero__gradient"></div>
+			<div class="content-max-width">
+				<div class="hero__flex-outer">
+					<div class="hero__cover-text">
+						<div id="date">17.05.2025</div>
+						<h1>Annebelle<br />& Pascal</h1>
 					</div>
+					<a
+						class="material-symbols-outlined"
+						id="hero__arrow-down"
+						href="#section-countdown"
+					>
+						expand_circle_down
+					</a>
 				</div>
-			</header>
+			</div>
+		</header>
+		<main>
 			<section class="countdown section--no-card" id="section-countdown">
 				<div class="countdown__content content-max-width">
 					<h2>Feier mit uns</h2>
@@ -371,7 +371,7 @@
 						href="https://www.google.com/maps/dir//Gasthaus+Schupfen,+Steinerstrasse+501,+8253+Diessenhofen/@47.6752799,8.7829455,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x479a866324e17171:0x69bdaf993e0d5486!2m2!1d8.7855204!2d47.6752763!3e0?entry=ttu"
 						target="_blank"
 					>
-						<p class="p--green">
+						<p>
 							<strong
 								><span class="material-symbols-outlined vertical-align-middle"
 									>directions</span
@@ -774,6 +774,7 @@
 					class="form"
 					id="form--signup"
 				>
+					<input type="hidden" name="form_type" value="signup" />
 					<div class="form__part">
 						<div class="has-float-label form__input-cluster">
 							<input
@@ -840,7 +841,7 @@
 						</div>
 					</div>
 					<!-- <input type="button" value="Anmelden" /> -->
-					<input type="submit" value="Anmelden" />
+					<input type="submit" value="Anmelden" class="button-ripple" />
 					<div class="submission-successful">
 						<p class="p--small">Du bist erfolgreich angemeldet - bis bald!</p>
 						<a href="" id="save-to-calendar">
@@ -857,7 +858,7 @@
 				</p>
 				<div class="faq-collection">
 					<div class="faq__container">
-						<div class="faq__container__header">
+						<div class="faq__container__header button-ripple">
 							<h4>Kann ich mit dem Auto anreisen?</h4>
 							<span class="material-symbols-outlined icon-faq">
 								expand_more
@@ -866,22 +867,20 @@
 						<div class="faq__content-container">
 							<div class="faq__content">
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Voluptate magnam officia repudiandae a est sit reiciendis quam
-									laborum earum voluptatem in sequi aspernatur quo modi maiores
-									ab, amet error eaque!
+									Absolut! Beim Gasthaus Schupfen sind ausreichend Parkplätze
+									vorhanden - dennoch spricht nichts gegen überlegtes Car
+									Pooling.
 								</p>
 								<p>
-									ipsum dolor sit amet consectetur adipisicing elit. Voluptate
-									magnam officia repudiandae a est sit reiciendis quam laborum
-									earum voluptatem in sequi aspernatur quo modi maiores ab, amet
-									error eaque!
+									Falls ihr in der Nähe übernachtet, könnt ihr das Auto auch
+									über Nacht stehen lassen und am nächsten Morgen bis 11:00
+									abholen.
 								</p>
 							</div>
 						</div>
 					</div>
 					<div class="faq__container">
-						<div class="faq__container__header">
+						<div class="faq__container__header button-ripple">
 							<h4>Kann ich mit dem ÖV anreisen?</h4>
 							<span class="material-symbols-outlined icon-faq">
 								expand_more
@@ -890,16 +889,23 @@
 						<div class="faq__content-container">
 							<div class="faq__content">
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Voluptate magnam officia repudiandae a est sit reiciendis quam
-									laborum earum voluptatem in sequi aspernatur quo modi maiores
-									ab, amet error eaque!
+									Das Gasthaus Schupfen ist leider nicht direkt mit dem ÖV
+									erreichbar. Falls ihr mit dem ÖV unterwegs seid empfehlen wir
+									die Anreise nach Schauffhausen, ab da könnt ihr ein Taxi
+									nehmen.
+								</p>
+								<p>
+									Vielleicht kann euch auch jemand unterwegs aufgabeln - sprecht
+									euch gerne untereinander ab oder
+									<a href="#form--contact"> <u>meldet euch bei uns</u> </a>,
+									damit wir euch bei der Suche nach einer Mitfahrgelegenheit
+									unterstützen können.
 								</p>
 							</div>
 						</div>
 					</div>
 					<div class="faq__container">
-						<div class="faq__container__header">
+						<div class="faq__container__header button-ripple">
 							<h4>Wieso denn bitte in Diessenhofen?</h4>
 							<span class="material-symbols-outlined icon-faq">
 								expand_more
@@ -908,16 +914,20 @@
 						<div class="faq__content-container">
 							<div class="faq__content">
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Voluptate magnam officia repudiandae a est sit reiciendis quam
-									laborum earum voluptatem in sequi aspernatur quo modi maiores
-									ab, amet error eaque!
+									Wieso nicht? Hast du jetzt etwa irgendeine romantische
+									Geschichte erwartet, wie wir uns in Diessenhofen in einer
+									warmen Sommernacht bei Mondschein das erste Mal gesehen haben
+									und sofort verliebt waren?
+								</p>
+								<p>
+									So war das nicht. Die Location ist cool, wir möchten da
+									heiraten, fertig.
 								</p>
 							</div>
 						</div>
 					</div>
 					<div class="faq__container">
-						<div class="faq__container__header">
+						<div class="faq__container__header button-ripple">
 							<h4>Kann ich da auch übernachten?</h4>
 							<span class="material-symbols-outlined icon-faq">
 								expand_more
@@ -926,16 +936,93 @@
 						<div class="faq__content-container">
 							<div class="faq__content">
 								<p>
-									Lorem ipsum dolor sit amet consectetur adipisicing elit.
-									Voluptate magnam officia repudiandae a est sit reiciendis quam
-									laborum earum voluptatem in sequi aspernatur quo modi maiores
-									ab, amet error eaque!
+									Das Gasthaus Schupfen bietet keine Übernachtungsmöglichkeiten
+									an. Ihr findet aber
+									<a
+										href="https://www.google.com/maps/search/Hotels/@47.6990432,8.7261668,11.66z/data=!4m8!2m7!3m5!2sGasthaus+Schupfen!3s0x479a866324e17171:0x69bdaf993e0d5486!4m2!1d8.7855204!2d47.6752763!6e3?entry=ttu"
+										><u>diverse geeignete Übernachtungsmöglichkeiten</u></a
+									>
+									im nahegelegenen Umfeld.
 								</p>
+								<p>
+									Falls ihr mit dem Auto anreist, könnt ihr dieses auch beim
+									Gasthaus Schupfen stehen lassen und am nächsten Morgen bis
+									11:00 abholen.
+								</p>
+								<p>Hier ein paar Übernachtungsmöglichkeiten in der Nähe:</p>
+								<ul>
+									<li>
+										Hotel Rheingold in Gailingen (DE)<br />
+										<a
+											href="https://www.google.com/maps/dir/''/Hotel+Restaurant+Rheingold,+Hauptstra%C3%9Fe+21,+78262+Gailingen+am+Hochrhein,+Deutschland/@47.6864568,8.7468596,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x479a866324e17171:0x69bdaf993e0d5486!2m2!1d8.7855204!2d47.6752763!1m5!1m1!1s0x479a86dab96ce431:0x78da0bf6042685e3!2m2!1d8.7527672!2d47.6976493!3e0?entry=ttu"
+											><span
+												class="material-symbols-outlined vertical-align-middle"
+												>directions</span
+											>
+											6 Minuten Fahrt</a
+										>
+									</li>
+									<li>
+										Hotel Rheingerbe in Stein am Rhein<br />
+										<a
+											href="https://www.google.com/maps/dir/''/Restaurant+%26+Hotel+Rheingerbe,+Schiffl%C3%A4ndi+5,+8260+Stein+am+Rhein/@47.6628846,8.8230526,13z/data=!3m1!4b1!4m25!1m10!3m9!1s0x479a88ccaf87d7e3:0x4239973d31b0552!2sRestaurant+%26+Hotel+Rheingerbe!5m2!4m1!1i2!8m2!3d47.659602!4d8.857749!16s%2Fg%2F1tdk90y6!4m13!1m5!1m1!1s0x479a866324e17171:0x69bdaf993e0d5486!2m2!1d8.7855204!2d47.6752763!1m5!1m1!1s0x479a88ccaf87d7e3:0x4239973d31b0552!2m2!1d8.857749!2d47.659602!3e0?entry=ttu"
+											><span
+												class="material-symbols-outlined vertical-align-middle"
+												>directions</span
+											>
+											9 Minuten Fahrt</a
+										>
+									</li>
+									<li>
+										Hotel Alte Rheinmühle in Büsingen (DE)<br />
+										<a
+											href="https://www.google.com/maps/dir/''/Hotel+und+Restaurant+Alte+Rheinm%C3%BChle,+Junkerstra%C3%9Fe+93,+78266+B%C3%BCsingen+am+Hochrhein,+Deutschland/@47.6896384,8.6908781,13.52z/data=!4m26!1m11!3m10!1s0x479a81096511ecbd:0xd2ca68231e03a81!2sHotel+und+Restaurant+Alte+Rheinm%C3%BChle!5m2!4m1!1i2!8m2!3d47.6955602!4d8.6875938!15sCgZIb3RlbHNaCCIGaG90ZWxzkgEFaG90ZWyaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVUktiMGszZDBOQkVBReABAA!16s%2Fg%2F1tmxpzvy!4m13!1m5!1m1!1s0x479a866324e17171:0x69bdaf993e0d5486!2m2!1d8.7855204!2d47.6752763!1m5!1m1!1s0x479a81096511ecbd:0xd2ca68231e03a81!2m2!1d8.6874403!2d47.6956815!3e0?entry=ttu"
+											><span
+												class="material-symbols-outlined vertical-align-middle"
+												>directions</span
+											>
+											11 Minuten Fahrt</a
+										>
+									</li>
+									<li>
+										Hotel 2B in Schaffhausen<br />
+										<a
+											href="https://www.google.com/maps/dir/''/Hotel+2B,+M%C3%BCnsterpl.+30,+8200+Schaffhausen/@47.6854311,8.7102802,12z/data=!3m1!4b1!4m26!1m11!3m10!1s0x47907f5e270bffff:0xde9717decae31eb7!2sHotel+2B!5m2!4m1!1i2!8m2!3d47.6957077!4d8.6361546!15sCgZIb3RlbHNaCCIGaG90ZWxzkgEFaG90ZWyaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTmhia2xpZG1kblJSQULgAQA!16s%2Fg%2F11h7v5ctqt!4m13!1m5!1m1!1s0x479a866324e17171:0x69bdaf993e0d5486!2m2!1d8.7855204!2d47.6752763!1m5!1m1!1s0x47907f5e270bffff:0xde9717decae31eb7!2m2!1d8.6361385!2d47.6956322!3e0?entry=ttu"
+											><span
+												class="material-symbols-outlined vertical-align-middle"
+												>directions</span
+											>
+											14 Minuten Fahrt</a
+										>
+									</li>
+									<li>
+										Selda's in Schaffhausen<br />
+										<a
+											href="https://www.google.com/maps/dir/''/Selda's,+Hintersteig+1,+8200+Schaffhausen/@47.6985952,8.6265414,16z/data=!4m25!1m10!3m9!1s0x47907f658088c7dd:0xdfc17dfe3f72b55f!2sSelda's!5m2!4m1!1i2!8m2!3d47.6985952!4d8.6316912!16s%2Fg%2F11t5xd8d_7!4m13!1m5!1m1!1s0x479a866324e17171:0x69bdaf993e0d5486!2m2!1d8.7855204!2d47.6752763!1m5!1m1!1s0x47907f658088c7dd:0xdfc17dfe3f72b55f!2m2!1d8.6316912!2d47.6985952!3e0?entry=ttu"
+											><span
+												class="material-symbols-outlined vertical-align-middle"
+												>directions</span
+											>
+											14 Minuten Fahrt</a
+										>
+									</li>
+									<li>
+										Vienna House by Wyndham in Schaffhausen<br />
+										<a
+											href="https://www.google.com/maps/dir/''/Vienna+House+by+Wyndham+Zur+Bleiche+Schaffhausen,+Bleichepl.+1,+8201+Schaffhausen/@47.6985952,8.6265414,16z/data=!4m25!1m10!3m9!1s0x47907f7154f77d2b:0xa7c4245564e8c131!2sVienna+House+by+Wyndham+Zur+Bleiche+Schaffhausen!5m2!4m1!1i2!8m2!3d47.6992783!4d8.6317749!16s%2Fg%2F11b639ppzv!4m13!1m5!1m1!1s0x479a866324e17171:0x69bdaf993e0d5486!2m2!1d8.7855204!2d47.6752763!1m5!1m1!1s0x47907f7154f77d2b:0xa7c4245564e8c131!2m2!1d8.6317749!2d47.6992783!3e0?entry=ttu"
+											><span
+												class="material-symbols-outlined vertical-align-middle"
+												>directions</span
+											>
+											15 Minuten Fahrt</a
+										>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 					<div class="faq__container">
-						<div class="faq__container__header">
+						<div class="faq__container__header button-ripple">
 							<h4>Was soll ich anziehen?</h4>
 							<span class="material-symbols-outlined icon-faq">
 								expand_more
@@ -953,7 +1040,7 @@
 						</div>
 					</div>
 					<div class="faq__container">
-						<div class="faq__container__header">
+						<div class="faq__container__header button-ripple">
 							<h4>Was wünscht ihr euch?</h4>
 							<span class="material-symbols-outlined icon-faq">
 								expand_more
@@ -986,6 +1073,7 @@
 					class="form"
 					id="form--contact"
 				>
+					<input type="hidden" name="form_type" value="contact" />
 					<div class="form__part">
 						<div class="has-float-label form__input-cluster">
 							<input
@@ -1027,11 +1115,14 @@
 							<label for="form--contact__message">Nachricht*</label>
 						</div>
 					</div>
-					<input type="submit" value="Senden" />
+					<input type="submit" value="Senden" class="button-ripple" />
 					<div class="submission-successful">
 						<p class="p--small">Deine Nachricht wurde erfolgreich versendet!</p>
 					</div>
 				</form>
+				<p class="material-symbols-outlined" id="heart-separator-end">
+					favorite
+				</p>
 			</section>
 		</main>
 	</body>
@@ -1143,6 +1234,7 @@
 
 		// Select all forms on the page
 		let forms = document.querySelectorAll(".form");
+		let signupForm = document.getElementById("form--signup");
 
 		// Loop over the forms
 		for (let i = 0; i < forms.length; i++) {
@@ -1150,6 +1242,19 @@
 			forms[i].addEventListener("submit", function (event) {
 				// Prevent the form from being submitted normally
 				event.preventDefault();
+
+				let formData = new FormData(this);
+
+				fetch(this.action, {
+					method: "Post",
+					body: formData,
+				})
+					.then((response) => response.text())
+					.then((data) => {});
+
+				if (this.id === "form--signup") {
+					confettiTrigger();
+				}
 
 				// Validate the form data...
 				// If the form data is not valid, return early
@@ -1165,6 +1270,52 @@
 			});
 		}
 	</script>
+	<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+	<script>
+		function confettiTrigger() {
+			const duration = 2 * 1000,
+				animationEnd = Date.now() + duration,
+				defaults = {
+					spread: 360,
+					ticks: 60,
+					startVelocity: 30,
+					zIndex: 0,
+					gravity: 0,
+					colors: ["fff"],
+					shapes: ["heart"],
+				};
+
+			function randomInRange(min, max) {
+				return Math.random() * (max - min) + min;
+			}
+
+			const interval = setInterval(function () {
+				const timeLeft = animationEnd - Date.now();
+
+				if (timeLeft <= 0) {
+					return clearInterval(interval);
+				}
+
+				const particleCount = 100 * (timeLeft / duration);
+
+				// since particles fall down, start a bit higher than random
+				confetti(
+					Object.assign({}, defaults, {
+						particleCount,
+						scalar: 4,
+						origin: { x: randomInRange(0.1, 0.9), y: Math.random() - 0.2 },
+					})
+				);
+				// confetti(
+				// 	Object.assign({}, defaults, {
+				// 		particleCount,
+				// 		scalar: 3,
+				// 		origin: { x: randomInRange(0.1, 0.9), y: Math.random() - 0.2 },
+				// 	})
+				// );
+			}, 500);
+		}
+	</script>
 	<script>
 		// FAQ expand and collapse
 		let faqHeaders = document.querySelectorAll(".faq__container__header");
@@ -1174,5 +1325,24 @@
 				this.parentNode.classList.toggle("opened");
 			});
 		}
+	</script>
+	<script>
+		// button ripple
+		const buttons = document.querySelectorAll(".button-ripple");
+		buttons.forEach((btn) => {
+			btn.addEventListener("click", function (e) {
+				let x =
+					e.pageX - e.target.getBoundingClientRect().left - window.scrollX;
+				let y = e.pageY - e.target.getBoundingClientRect().top - window.scrollY;
+				let ripples = document.createElement("span");
+				ripples.classList.add("ripples");
+				ripples.style.left = x + "px";
+				ripples.style.top = y + "px";
+				this.appendChild(ripples);
+				setTimeout(() => {
+					ripples.remove();
+				}, 600);
+			});
+		});
 	</script>
 </html>
