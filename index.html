@@ -1263,7 +1263,38 @@
 				this.querySelector('input[type="submit"]').style.display = "none";
 
 				// Show the success message
-				this.querySelector(".submission-successful").style.display = "block";
+				let successMessage = this.querySelector(".submission-successful");
+				successMessage.style.display = "block";
+
+				// Select the section containing the form
+				let section = this.closest("section");
+				const sectionRect = section.getBoundingClientRect();
+				const formRect = this.getBoundingClientRect();
+				const viewportHeight = window.innerHeight;
+				let topPosition;
+
+				if (sectionRect.height <= viewportHeight) {
+					// If the section is smaller than or equal to the viewport, center the section
+					topPosition =
+						sectionRect.top +
+						window.pageYOffset -
+						viewportHeight / 2 +
+						sectionRect.height / 2;
+				} else if (formRect.height <= viewportHeight) {
+					// If the form is smaller than or equal to the viewport, center the form
+					topPosition =
+						formRect.top +
+						window.pageYOffset -
+						viewportHeight / 2 +
+						formRect.height / 2;
+				} else {
+					// If the form is larger than the viewport, show the end of the form with a bottom gap
+					topPosition =
+						formRect.bottom + window.pageYOffset - viewportHeight + 20;
+				}
+
+				// Scroll to the calculated position
+				window.scrollTo({ top: topPosition, behavior: "smooth" });
 
 				// Set the href attribute of the #save-to-calendar anchor to the URL of the file
 				this.querySelector("#save-to-calendar").href = "./assets/hochzeit.ics";
